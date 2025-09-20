@@ -28,13 +28,14 @@ function display(array) {
         const span = document.createElement('span');
         span.textContent = array[i].content;
         span.setAttribute("class", array[i].completed ? 'line' : '')
+        span.style.whiteSpace = "nowrap";
 
         const doneBtn = document.createElement('button');    
         doneBtn.innerHTML = `<span>&#10004</span>`;
         doneBtn.setAttribute("onclick", `doneTask('${i}')`)
 
         const delBtn = document.createElement('button');    
-        delBtn.innerHTML = 'Del';
+        delBtn.innerHTML = 'X';
         delBtn.setAttribute("onclick", `delTask('${i}')`)
         
         div.appendChild(span)
